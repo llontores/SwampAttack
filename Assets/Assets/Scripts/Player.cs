@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Animator))]
 public class Player : MonoBehaviour
@@ -14,6 +15,8 @@ public class Player : MonoBehaviour
     private Animator _animator;
     
     public int Money { get; private set; }
+
+    public event UnityAction<int,int> HealthChanged;
 
     private void Start()
     {
@@ -39,6 +42,7 @@ public class Player : MonoBehaviour
     public void ApplyDamage(int _damage)
     {
         _currentHealth -= _damage;
+        HealthChanged?.Invoke(_currentHealth, _heatlh);
 
         if(_currentHealth <= 0)
         {
