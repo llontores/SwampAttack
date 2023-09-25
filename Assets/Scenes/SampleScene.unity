@@ -991,7 +991,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.8660278, y: -105.762024}
+  m_AnchoredPosition: {x: 3.8659668, y: -105.76196}
   m_SizeDelta: {x: -543.589, y: -371.34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &601450015
@@ -1045,11 +1045,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weapons:
-  - {fileID: 1628255015233784932, guid: ca577020d1383be4dba44befb185e7a4, type: 3}
-  - {fileID: 1628255015233784932, guid: ca577020d1383be4dba44befb185e7a4, type: 3}
-  - {fileID: 1628255015233784932, guid: ca577020d1383be4dba44befb185e7a4, type: 3}
-  - {fileID: 1628255015233784932, guid: ca577020d1383be4dba44befb185e7a4, type: 3}
-  - {fileID: 1628255015233784932, guid: ca577020d1383be4dba44befb185e7a4, type: 3}
+  - {fileID: 6291790489339358581, guid: ca577020d1383be4dba44befb185e7a4, type: 3}
+  - {fileID: 6291790489339358581, guid: 2f625272297400a4385a23911a8026b2, type: 3}
   _view: {fileID: 9045942166296041510, guid: 69ff79a12a10d2246ace473defb82269, type: 3}
   _player: {fileID: 631000640}
   _container: {fileID: 858159123}
@@ -1259,7 +1256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _heatlh: 100
   _weapons:
-  - {fileID: 1628255015233784932, guid: ca577020d1383be4dba44befb185e7a4, type: 3}
+  - {fileID: 6291790489339358581, guid: ca577020d1383be4dba44befb185e7a4, type: 3}
   _shootpoint: {fileID: 458443746}
 --- !u!1 &710018067
 GameObject:
@@ -1348,6 +1345,7 @@ GameObject:
   - component: {fileID: 712683548}
   - component: {fileID: 712683550}
   - component: {fileID: 712683549}
+  - component: {fileID: 712683551}
   m_Layer: 5
   m_Name: Money
   m_TagString: Untagged
@@ -1415,6 +1413,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 712683547}
   m_CullTransparentMesh: 1
+--- !u!114 &712683551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712683547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8d5485b967b8b34aaac07dd01d991f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _money: {fileID: 50055675}
+  _player: {fileID: 631000640}
 --- !u!1 &713340623
 GameObject:
   m_ObjectHideFlags: 0
