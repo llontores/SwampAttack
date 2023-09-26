@@ -11,6 +11,16 @@ public class MoneyBalance : MonoBehaviour
     private void OnEnable()
     {
         _money.text = "Money :" + _player.Money.ToString();
+        _player.MoneyChanged += OnMoneyChanged;
+    }
+
+    private void OnDisable(){
+        _player.MoneyChanged -= OnMoneyChanged;
+    }
+
+    private void OnMoneyChanged(int moneyBalance){
+        _money.text = "Money :" + moneyBalance.ToString();
+
     }
 
 }
