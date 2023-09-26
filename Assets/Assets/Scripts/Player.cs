@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform _shootpoint;
 
     private Weapon _currentWeapon;
+    private int _currentWeaponIndex = 0;
     private int _currentHealth;
     private Animator _animator;
     
@@ -18,10 +19,11 @@ public class Player : MonoBehaviour
 
     public event UnityAction<int,int> HealthChanged;
     public event UnityAction<int> MoneyChanged;
+    public event UnityAction<Weapon> WeaponChanged;
 
     private void Start()
     {
-        _currentWeapon = _weapons[0];
+        SetWeapon();
         _currentHealth = _heatlh;
         _animator = GetComponent<Animator>();
     }
@@ -61,5 +63,31 @@ public class Player : MonoBehaviour
         Money -= weapon.Price;
         MoneyChanged?.Invoke(Money);
         _weapons.Add(weapon);
+    }
+
+    public void NextWeapon(){
+        Debug.Log(_currentWeaponIndex);
+        if(_currentWeaponIndex == _weapons.Count - 1)
+            _currentWeapon = _weapons[_currentWeaponIndex];
+        
+        else{
+            _currentWeaponIndex++;
+            SetWeapon();
+        }
+    }
+
+    public void PreviousWeapon(){
+        if(_currentWeaponIndex == 0)
+            _currentWeapon = _weapons[_currentWeaponIndex];
+        
+        else{
+            _currentWeaponIndex--;
+            SetWeapon();
+        }
+    }
+
+    private void SetWeapon(){
+        _currentWeapon = _weapons[_currentWeaponIndex];
+        WeaponChanged?.Invoke(_currentWeapon);
     }
 }

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6291790489339358578}
-  - component: {fileID: 6291790489339358581}
+  - component: {fileID: -5227395978331003711}
   m_Layer: 0
   m_Name: Uzi
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6291790489339358581
+--- !u!114 &-5227395978331003711
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,11 +41,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6291790489339358580}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94f122c10f9cbb34abfd71db389ae4fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 62df7805c176ff943800dda97cee87cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _label: "\u0410\u0432\u0442\u043E\u043C\u0430\u0442"
-  _price: 5
+  _label: "\u0423\u0437\u0438"
+  _price: 3
   _icon: {fileID: 21300000, guid: 54e87cb8ed208cf438e56561462bc65b, type: 3}
   _isByued: 0
   Bullet: {fileID: 5940325543570595114, guid: 4913e2ca910f1f04e843d46ef9afb954, type: 3}
+  _delay: 0.2
+  _amountInQueue: 5

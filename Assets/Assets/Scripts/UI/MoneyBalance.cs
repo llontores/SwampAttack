@@ -13,7 +13,7 @@ public class MoneyBalance : MonoBehaviour
         _money.text = "Money :" + _player.Money.ToString();
         _player.MoneyChanged += OnMoneyChanged;
     }
-
+    
     private void OnDisable(){
         _player.MoneyChanged -= OnMoneyChanged;
     }
