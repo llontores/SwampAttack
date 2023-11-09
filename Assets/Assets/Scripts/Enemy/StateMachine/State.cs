@@ -42,7 +42,6 @@ public abstract class State : MonoBehaviour
         {
             if (transition.NeedTransit == true)
                 return transition.TargetState;
-
         }
 
         return null;

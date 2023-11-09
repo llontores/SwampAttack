@@ -9,9 +9,13 @@ public class Uzi : Weapon
     [SerializeField] private int _amountInQueue;
 
     private float _elapsedTime;
+    private Coroutine _shootWithQueueJob;
     public override void Shoot(Transform shootPoint)
     {
-        
+        if(_shootWithQueueJob == null)
+        {
+            _shootWithQueueJob = StartCoroutine(ShootWithQueue(shootPoint));
+        }
     }
 
     public void Update(){
@@ -20,14 +24,27 @@ public class Uzi : Weapon
 
     private IEnumerator ShootWithQueue(Transform shootPoint)
     {
-        int counter = 0;
         WaitForSeconds delay = new WaitForSeconds(_delay);
 
-        while(counter >= _amountInQueue){
-            counter++;
+        for (int i = 0; i < _amountInQueue; i++)
+        {
             Instantiate(Bullet, shootPoint.position, Quaternion.identity);
 
             yield return delay;
         }
+
+        EndCoroutine();
+        //int counter = 0;
+        //while(counter >= _amountInQueue){
+        //    counter++;
+        //    Instantiate(Bullet, shootPoint.position, Quaternion.identity);
+
+        //    yield return delay;
+        //}
+    }
+
+    private void EndCoroutine()
+    {
+        StopCoroutine(_shootWithQueueJob);
     }
 }

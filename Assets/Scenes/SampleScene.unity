@@ -1468,7 +1468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _heatlh: 100
   _weapons:
-  - {fileID: -5227395978331003711, guid: 2f625272297400a4385a23911a8026b2, type: 3}
+  - {fileID: 6291790489339358581, guid: ca577020d1383be4dba44befb185e7a4, type: 3}
   _shootpoint: {fileID: 458443746}
 --- !u!1 &710018067
 GameObject:
